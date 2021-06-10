@@ -2,11 +2,14 @@
 
 public class PlayerCollision : MonoBehaviour
 {
+
+    public PlayerMovement playerMovement;
+
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.name == "Obstacle")
+        if(collision.collider.tag == "Obstacle")
         {
-            Debug.Log("Hit the Obstacle");
+            playerMovement.enabled = false;
         }
     }
 }
